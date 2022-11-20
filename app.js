@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const cors = require('cors')
 const {urlencoded} = require('express');
 const taskManager = require('./model');
 
@@ -13,6 +14,11 @@ mongoose.connect(url).then(() => {
 }).catch((err) => {
     console.log("error = ",err);
 })
+
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+}))
 app.use(urlencoded({extended: false}));
 app.use(express.json());
 
