@@ -76,6 +76,7 @@ app.patch("/modifyTask", async (req, res)=>{
     }
 })
 
-app.listen(5000, () => {
-    console.log("server listening to port 5000..");
+const port = process.env.PORT || 5000 ;
+app.listen(port, () => {
+    console.log(`server listening to port ${port}`);
 })
