@@ -5,6 +5,6 @@ const taskUpdate = new mongoose.Schema({
     taskdata: {type: String, required: true}
 });
 
-const model = mongoose.model("taskManager", taskUpdate);
+const model = mongoose.model("task", taskUpdate);
 
 module.exports = model;
